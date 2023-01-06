@@ -14,6 +14,13 @@ public class PlayerMovementScript : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
+    public GameObject spikeToThrow;
+
+    public void throwSpike(){
+        Instantiate(spikeToThrow);
+        // spikeToThrow.transform.localPosition;
+    }
+
     // Update is called once per frame
     private int counter = 0;
     void decreaseVelocity(){
@@ -42,6 +49,8 @@ public class PlayerMovementScript : MonoBehaviour
             myrigidbody2d.velocity = Vector2.left * flapStrength;
         }else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)){
             myrigidbody2d.velocity = Vector2.right * flapStrength;
+        }else if(Input.GetKeyDown(KeyCode.Space)){
+            throwSpike();
         }
     }
 }
