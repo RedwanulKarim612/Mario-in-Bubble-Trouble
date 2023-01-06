@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2077483352835062590}
   - component: {fileID: 561451232826771800}
   - component: {fileID: 5914708786368121274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4778685450851388336}
   - component: {fileID: 7642565053762292639}
   - component: {fileID: 7683531607229131558}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,9 +207,9 @@ GameObject:
   - component: {fileID: 8382490392070295959}
   - component: {fileID: -2855897983657271166}
   - component: {fileID: -2523671480995656691}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Chain
-  m_TagString: Untagged
+  m_TagString: spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3750220068353612609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: -2523671480995656691}
+  bulletSpeed: 10
 --- !u!50 &-2523671480995656691
 Rigidbody2D:
   serializedVersion: 4

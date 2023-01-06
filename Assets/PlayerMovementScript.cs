@@ -17,8 +17,14 @@ public class PlayerMovementScript : MonoBehaviour
     public GameObject spikeToThrow;
 
     public void throwSpike(){
-        Instantiate(spikeToThrow);
-        // spikeToThrow.transform.localPosition;
+        // Vector3 position = transform.localPosition;
+        // Vector3 localScale = myrigidbody2d.transform.localScale;
+        // Debug.Log(position.x);
+        // if(localScale.x > 0) {
+        //     position = Vector3.forward * 4;
+        // }else position = Vector3.back * 4;
+        GameObject spike = Instantiate(spikeToThrow, transform.localPosition, Quaternion.identity);
+        spike.transform.localPosition = transform.localPosition;
     }
 
     // Update is called once per frame
