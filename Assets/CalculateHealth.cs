@@ -14,7 +14,7 @@ public class CalculateHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	//if(player.GetComponent<PlayerMovementScript>().health == 0 )         SceneManager.LoadScene("GameOver");
+    	if(player.GetComponent<PlayerMovementScript>().health == 0 ) SceneManager.LoadScene("GameOver");
         GetComponent<TMPro.TextMeshProUGUI>().text = "health " + player.GetComponent<PlayerMovementScript>().health.ToString() + "/5";
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class PlayerMovementScript : MonoBehaviour
 {
     public Rigidbody2D myrigidbody2d;
@@ -60,11 +61,16 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
     
+    public TMP_Text currentScore;
     void OnCollisionEnter2D(Collision2D other) {
         Debug.Log("player hit");
-        
-	Debug.Log("hit by capsule");
-	health--;
-
+            
+        Debug.Log("hit by capsule");
+        health--;
+        other.gameObject.GetComponent<InitializeVelocity>().Split();
+        // Destroy(other.gameObject);
+        // int cscore = this.currentScore.GetComponent<CalculateScore>().score;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // this.currentScore.GetComponent<CalculateScore>().score = cscore;
     }
 }

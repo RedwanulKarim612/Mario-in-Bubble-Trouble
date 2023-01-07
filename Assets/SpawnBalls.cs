@@ -19,11 +19,11 @@ public class SpawnBalls : MonoBehaviour
         transform.position = ball.transform.position;
     }
 
+    int spawnCount = 0;
     void CreateBall()
     {
         // Cancel the previous invocation
-       
-
+        if(spawnCount == 4) return;
         GameObject ball1 = Instantiate(ball, ball.transform.position, Quaternion.identity); // Create a ball at the current position of the ball prefab
         // GameObject ball2 = Instantiate(ball, ball.transform.position, Quaternion.identity); // Create another ball at the current position of the ball prefab
 	ball1.GetComponent<InitializeVelocity>().velocity = new Vector2(3,1);
@@ -31,7 +31,8 @@ public class SpawnBalls : MonoBehaviour
         ball1.GetComponent<InitializeVelocity>().scoreText = this.scoreText;
         // ball2.transform.localScale = ball.transform.localScale * ballScale; // Set the scale of ball2
 
-       
-        Invoke("CreateBall", 10f); // Invoke the CreateBall function again after 5 seconds
+        spawnCount++;
+        
+        Invoke("CreateBall", 10f);
     }
 }

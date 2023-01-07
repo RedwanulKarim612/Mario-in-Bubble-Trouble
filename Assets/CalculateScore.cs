@@ -15,15 +15,16 @@ public class CalculateScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(score==5) {
-        //	if(SceneManager.GetActiveScene().name=="Level_2"){
-        //		SceneManager.LoadScene("MainMenu");
-        //	}
-        //	else{
-        //		SceneManager.LoadScene("Banner_Level_2");
-        //	}
-        //}
-    	GetComponent<TMPro.TextMeshProUGUI>().text = "score " + score.ToString() + "/20";
+        if(score==10) {
+            Debug.Log(SceneManager.GetActiveScene().name);
+        	if(SceneManager.GetActiveScene().name=="Level_2"){
+        		SceneManager.LoadScene("YouWon");
+        	}
+        	else{
+        		SceneManager.LoadScene("Banner_Level_2");
+        	}
+        }
+    	GetComponent<TMPro.TextMeshProUGUI>().text = "score " + score.ToString() + "/10";
     }
     
 }

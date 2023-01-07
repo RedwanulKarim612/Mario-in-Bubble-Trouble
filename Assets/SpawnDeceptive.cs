@@ -25,7 +25,7 @@ public class SpawnDeceptive : MonoBehaviour
        
         GameObject ball1 = Instantiate(ball, ball.transform.position, Quaternion.identity); // Create a ball at the current position of the ball prefab
         // GameObject ball2 = Instantiate(ball, ball.transform.position, Quaternion.identity); // Create another ball at the current position of the ball prefab
-	ball1.GetComponent<InnocentBubbleHandler>().velocity = new Vector2(3,5);
+	    ball1.GetComponent<InnocentBubbleHandler>().velocity = new Vector2(3,5);
         //ball1.transform.localScale = ball.transform.localScale * ballScale; // Set the scale of ball1
         ball1.GetComponent<InnocentBubbleHandler>().scoreText = this.scoreText;
         // ball2.transform.localScale = ball.transform.localScale * ballScale; // Set the scale of ball2

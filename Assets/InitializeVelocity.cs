@@ -27,6 +27,7 @@ public class InitializeVelocity : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
 	if(fireTimer<fireRate){
@@ -45,6 +46,10 @@ public class InitializeVelocity : MonoBehaviour
 			cloneTimer=0;
 		}
 	}
+
+    if(this.gameObject.transform.localPosition.y >= 1.5){
+        ballRigidbody.velocity = new Vector2(ballRigidbody.velocity.x, 0);
+    }
 
     }
     

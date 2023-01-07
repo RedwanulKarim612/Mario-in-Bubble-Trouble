@@ -25,6 +25,7 @@ public class InnocentBubbleHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(deceiveTimer<deceiveRate){
         	deceiveTimer+=Time.deltaTime;
         }
@@ -33,7 +34,9 @@ public class InnocentBubbleHandler : MonoBehaviour
         	counter = 1-counter;
         	spriteRenderer.sprite = sprites[counter];
         }
-
+        if(this.gameObject.transform.localPosition.y >= 1.5){
+           ballRigidbody.velocity = new Vector2(ballRigidbody.velocity.x, 0);
+    }
     }
     
     public void Split()
@@ -72,8 +75,9 @@ public class InnocentBubbleHandler : MonoBehaviour
                 this.scoreText.GetComponent<CalculateScore>().score = this.scoreText.GetComponent<CalculateScore>().score+1;
             }
             else {
+                this.scoreText.GetComponent<CalculateScore>().score = this.scoreText.GetComponent<CalculateScore>().score-2;
             	Debug.Log("killed innocent bubble");
-            	//Destroy(this.gameObject);
+            	Destroy(this.gameObject);
             }
         }
     }

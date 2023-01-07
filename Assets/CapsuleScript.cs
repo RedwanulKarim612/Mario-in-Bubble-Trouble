@@ -18,9 +18,9 @@ public class CapsuleScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other) {
 
             //Debug.Log("player hit");
-        if(other.gameObject.name=="Character"){
+        if(other.gameObject.name=="Character" || other.gameObject.transform.localPosition.z == -5){
         	Debug.Log("hitttt");
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
     }
 }
