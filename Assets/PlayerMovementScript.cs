@@ -66,8 +66,8 @@ public class PlayerMovementScript : MonoBehaviour
         Debug.Log("player hit");
             
         Debug.Log("hit by capsule");
-        health--;
-        other.gameObject.GetComponent<InitializeVelocity>().Split();
+        if(other.gameObject.name!="RightBoundary" && other.gameObject.name!="LeftBoundary") health--;
+        if(other.gameObject.GetComponent<InitializeVelocity>()) other.gameObject.GetComponent<InitializeVelocity>().Split();
         // Destroy(other.gameObject);
         // int cscore = this.currentScore.GetComponent<CalculateScore>().score;
         // SceneManager.LoadScene(SceneManager.GetActiveScene().name);

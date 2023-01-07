@@ -112,7 +112,7 @@ public class InitializeVelocity : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag=="spike") {
             //Debug.Log(this.scoreText.GetComponent<CalculateScore>().score);
-            this.scoreText.GetComponent<CalculateScore>().score = this.scoreText.GetComponent<CalculateScore>().score+1;
+            if(!isClone)this.scoreText.GetComponent<CalculateScore>().score = this.scoreText.GetComponent<CalculateScore>().score+1;
             Destroy(other.gameObject);
             if(!isClone)Split();
             else Destroy(this.gameObject);
