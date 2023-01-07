@@ -18,4 +18,5 @@ public class ChainScript : MonoBehaviour
         if(bullet.transform.position.y > 100) Destroy(gameObject);
         else bullet.velocity = Vector2.up * bulletSpeed;
     }
+    
 }

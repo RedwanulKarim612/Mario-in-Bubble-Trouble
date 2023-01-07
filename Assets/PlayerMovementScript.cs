@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class PlayerMovementScript : MonoBehaviour
 {
     public Rigidbody2D myrigidbody2d;
     public float flapStrength = 4;
     public Sprite[] sprites;
     public SpriteRenderer spriteRenderer;
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        health = 5;
     }
 
     public GameObject spikeToThrow;
 
     public void throwSpike(){
-        // Vector3 position = transform.localPosition;
-        // Vector3 localScale = myrigidbody2d.transform.localScale;
-        // Debug.Log(position.x);
-        // if(localScale.x > 0) {
-        //     position = Vector3.forward * 4;
-        // }else position = Vector3.back * 4;
+        Vector3 localScale = myrigidbody2d.transform.localScale;
         GameObject spike = Instantiate(spikeToThrow, transform.localPosition, Quaternion.identity);
         spike.transform.localPosition = transform.localPosition;
+        if(localScale.x > 0) {
+            spike.transform.localPosition += Vector3.right * .32f;
+        }else spike.transform.localPosition += Vector3.left * .32f;
     }
 
     // Update is called once per frame
@@ -58,5 +58,13 @@ public class PlayerMovementScript : MonoBehaviour
         }else if(Input.GetKeyDown(KeyCode.Space)){
             throwSpike();
         }
+    }
+    
+    void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("player hit");
+        
+	Debug.Log("hit by capsule");
+	health--;
+
     }
 }
