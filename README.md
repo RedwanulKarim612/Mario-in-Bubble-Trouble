@@ -9,3 +9,6 @@ For manual build:
 <li> Add all the scenes in build settings.</li>
 <li> Build & Run </li> 
 </ul> 
+
+## How to play
+use left and right arrow keys or A and D keys to move Mario in left or right direction. Use Space to shoot.
